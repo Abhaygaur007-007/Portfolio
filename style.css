@@ -78,6 +78,7 @@ html {
     align-items: center;
     padding: 10px 50px;
     background-color: #000;
+    position: relative;
 }
 
 .navbar-content {
@@ -110,6 +111,14 @@ html {
 
 .menu li a:hover {
     color: #aaa;
+}
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
 }
 
 .main-section {
