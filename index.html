@@ -23,11 +23,31 @@ body {
 .logo {
     font-size: 24px;
 }
+
 .menu {
-    gap: 20px;
-    font-size: 20px;
-    padding-right: 40px;
-}
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 40%;
+        right: 0;
+        background-color: #000;
+        gap: 0;
+        width: 44px; /* Or set to your preferred width */
+        z-index: 100; /* Ensure it's on top */
+        border-top: none;
+    }
+
+    .menu li {
+       text-align: right;
+       padding: 5px 10px; /* Optional padding for each menu item */
+    }
+.menu-toggle {
+        display: block;
+    }
+
+    .menu.active {
+        display: flex;
+    }
 
 .main-section {
     flex-direction: column;
@@ -182,7 +202,7 @@ body {
     }
 
     .contact-email {
-        font-size: 32px; /* Reduced font size */
+        font-size: 28px; /* Reduced font size */
         line-height: 36px;
         margin-top: 10px;
     }
@@ -215,6 +235,9 @@ body {
     <nav class="navbar">
         <div class="navbar-content">
             <div class="logo">AbhayGaur</div>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                ☰
+            </button>
             <ul class="menu">
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -373,6 +396,12 @@ development and a passion for learning, I aim to further enhance my expertise an
     
 
 <script>
+
+function toggleMenu() {
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('active');
+}
+
 
 let currentSlide = 0;
 const totalProjects = 4; // Replace with your total number of projects
